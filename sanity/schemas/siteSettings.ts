@@ -9,7 +9,8 @@ export const siteSettings = defineType({
     defineField({ name: 'domain', title: 'Domain', type: 'string' }),
     defineField({ name: 'title', title: 'Page Title', type: 'string' }),
     defineField({ name: 'description', title: 'Meta Description', type: 'text' }),
-    defineField({ name: 'resumeHref', title: 'Resume URL', type: 'string' }),
+    defineField({ name: 'headshot', title: 'Headshot', type: 'image', options: { hotspot: true } }),
+    defineField({ name: 'resume', title: 'Resume (PDF)', type: 'file', options: { accept: '.pdf' } }),
     defineField({ name: 'linkedinUrl', title: 'LinkedIn URL', type: 'url' }),
     defineField({
       name: 'navigation',

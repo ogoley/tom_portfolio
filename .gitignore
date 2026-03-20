@@ -10,8 +10,12 @@ out/
 .env.local
 .env*.local
 
-# Claude Code (contains API tokens)
-.claude/settings.json
+# Claude Code (contains API tokens and local config)
+.claude/
+
+# Sanity Studio build output
+dist/
+.sanity/
 
 # OS
 .DS_Store

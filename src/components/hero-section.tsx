@@ -4,9 +4,11 @@ import type { HeroContent, SocialLink } from "@/content/schema";
 type HeroSectionProps = {
   hero: HeroContent;
   socialLinks: SocialLink[];
+  headshotUrl?: string;
+  resumeUrl?: string;
 };
 
-export function HeroSection({ hero, socialLinks }: HeroSectionProps) {
+export function HeroSection({ hero, socialLinks, headshotUrl, resumeUrl }: HeroSectionProps) {
   return (
     <section id="top" className="relative overflow-hidden pb-12 pt-10 sm:pb-16 sm:pt-14">
       <div className="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-grain opacity-90" />
@@ -29,16 +31,20 @@ export function HeroSection({ hero, socialLinks }: HeroSectionProps) {
               {hero.primaryCta.label}
             </a>
             <a
-              href={hero.secondaryCta.href}
+              href={resumeUrl ?? hero.secondaryCta.href}
               download
               className="inline-flex h-11 items-center justify-center rounded-full border border-border/90 bg-surface/75 px-5 text-sm font-semibold text-foreground transition duration-300 hover:border-accent/40 hover:bg-surfaceStrong/80"
             >
               {hero.secondaryCta.label}
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 pt-1 text-sm text-foreground/62">
+          <div className="flex flex-wrap gap-3 pt-1">
             {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} className="transition duration-300 hover:text-foreground">
+              <a
+                key={link.label}
+                href={link.href}
+                className="inline-flex h-11 items-center justify-center rounded-full border border-border/90 bg-surface/75 px-5 text-sm font-semibold text-foreground transition duration-300 hover:border-accent/40 hover:bg-surfaceStrong/80"
+              >
                 {link.label}
               </a>
             ))}
@@ -48,7 +54,7 @@ export function HeroSection({ hero, socialLinks }: HeroSectionProps) {
           <div className="overflow-hidden rounded-[1.5rem] border border-border/80 bg-surface/78 shadow-soft backdrop-blur">
             <div className="relative aspect-[3/4]">
               <Image
-                src="/tom-ogoley-headshot.jpg"
+                src={headshotUrl ?? "/tom-ogoley-headshot.jpg"}
                 alt="Tom Ogoley headshot"
                 fill
                 className="object-cover"

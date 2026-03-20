@@ -3,7 +3,9 @@ import type { SiteContent } from '@/content/schema'
 
 const query = `{
   "site": *[_type == "siteSettings"][0] {
-    name, domain, title, description, resumeHref, linkedinUrl
+    name, domain, title, description, resumeHref, linkedinUrl,
+    "headshotUrl": headshot.asset->url,
+    "resumeUrl": resume.asset->url
   },
   "navigation": *[_type == "siteSettings"][0].navigation,
   "socialLinks": *[_type == "siteSettings"][0].socialLinks,

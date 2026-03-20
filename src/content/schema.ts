@@ -71,6 +71,8 @@ export type SiteContent = {
     description: string;
     resumeHref: string;
     linkedinUrl: string;
+    headshotUrl?: string;
+    resumeUrl?: string;
   };
   navigation: NavItem[];
   socialLinks: SocialLink[];

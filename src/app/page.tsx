@@ -16,7 +16,7 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       <SiteHeader name={content.site.name} navigation={content.navigation} linkedinUrl={content.site.linkedinUrl} />
-      <HeroSection hero={content.hero} socialLinks={content.socialLinks} />
+      <HeroSection hero={content.hero} socialLinks={content.socialLinks} headshotUrl={content.site.headshotUrl} resumeUrl={content.site.resumeUrl} />
       <AboutSection about={content.about} />
       <ExperienceSection experience={content.experience} />
       <ProjectsSection projects={content.projects} />
@@ -24,7 +24,7 @@ export default async function HomePage() {
       <ContactSection
         contact={content.contact}
         socialLinks={content.socialLinks}
-        resumeHref={content.site.resumeHref}
+        resumeHref={content.site.resumeUrl ?? content.site.resumeHref}
       />
       <SiteFooter name={content.site.name} note={content.footerNote} socialLinks={content.socialLinks} />
     </main>
