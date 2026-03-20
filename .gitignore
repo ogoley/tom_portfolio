@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Claude Code (contains API tokens)
+.claude/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
